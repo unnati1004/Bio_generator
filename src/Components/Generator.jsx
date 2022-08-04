@@ -8,7 +8,13 @@ function Generator() {
   return (
     <div className='form_data'>
     <Form>
-      <Row className="mb-3">
+    <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridName">
+          <Form.Label>Profile Pic</Form.Label>
+          <Form.Control type="file" />
+        </Form.Group>
+        </Row>
+        <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Enter name" />
