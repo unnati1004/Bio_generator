@@ -4,24 +4,33 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Generator.css'
+import { useState } from "react";
+import Resume from './Resume';
 function Generator() {
+  const [data,setData] = useState("")
+    const handleChange=(e)=>{
+      const {id,value} = e.target;
+      // console.log(id,value);
+      setData({...data,[id]:value})
+    }
   return (
+    <div className='form_gridview'>
     <div className='form_data'>
     <Form>
     <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridName">
+        <Form.Group as={Col} controlId="formGridFile">
           <Form.Label>Profile Pic</Form.Label>
           <Form.Control type="file" />
         </Form.Group>
         </Row>
         <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridName">
+        <Form.Group as={Col} controlId="formGridName" >
           <Form.Label>Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter name" />
+          <Form.Control type="text" name={'name'} placeholder="Enter name" onChange={(e)=>handleChange(e)}/>
         </Form.Group>
         <Form.Group as={Col} controlId="formGridGender">
           <Form.Label>Gender</Form.Label>
-          <Form.Select defaultValue="Choose...">
+          <Form.Select defaultValue="Choose..." onChange={(e)=>handleChange(e)}>
             <option>Choose...</option>
             <option>male</option>
             <option>female</option>
@@ -32,36 +41,46 @@ function Generator() {
         <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control type="email" placeholder="Enter email" onChange={(e)=>handleChange(e)}/>
         </Form.Group>
       </Row>
 
       <Form.Group className="mb-3" controlId="formGridAddress1">
         <Form.Label>Address</Form.Label>
-        <Form.Control placeholder="1234 Main St" />
+        <Form.Control placeholder="1234 Main St"onChange={(e)=>handleChange(e)}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formGridAddress2">
         <Form.Label>Address 2</Form.Label>
-        <Form.Control placeholder="Apartment, studio, or floor" />
+        <Form.Control placeholder="Apartment, studio, or floor" onChange={(e)=>handleChange(e)}/>
       </Form.Group>
 
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridCity">
           <Form.Label>City</Form.Label>
-          <Form.Control />
+          <Form.Control  onChange={(e)=>handleChange(e)}/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>State</Form.Label>
-          <Form.Select defaultValue="Choose...">
+          <Form.Select defaultValue="Choose..." onChange={(e)=>handleChange(e)}>
             <option>Choose...</option>
-            <option>...</option>
+            <option>UP</option>
+            <option>Maharastra</option>
+            <option>Uttrakhand</option>
+            <option>Bihar</option>
+            <option>Tamil Nadu</option>
+            <option>Andhra Pradesh</option>
+            <option>Assam</option>
+            <option>Chhattisgarh</option>
+            <option>Goa</option>
+            <option>Gujara</option>
+            <option>Rajasthan</option>
+            <option>Karnataka</option>
+            <option>Punjab</option>
+            <option>Sikkim</option>
+            <option>Himachal Pradesh</option>
+            <option>Odisha</option>
           </Form.Select>
         </Form.Group>
 
@@ -70,15 +89,14 @@ function Generator() {
           <Form.Control />
         </Form.Group>
       </Row>
-
-      <Form.Group className="mb-3" id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
+      {/* <Button variant="primary" type="submit">
         Submit
-      </Button>
+      </Button> */}
     </Form>
+    </div>
+    <div>
+          <Resume data={data}/>
+    </div>
     </div>
   );
 }
