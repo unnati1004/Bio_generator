@@ -1,20 +1,16 @@
-import React from 'react'
+import React from "react";
 
-const Resume = ({data}) => {
-    console.log(data)
+const Resume = ({ data }) => {
+  console.log(data);
   return (
     <div>
-        <h1>Resume</h1>
-        <p disabled={!data.formGridName}>{data.formGridName}</p>
-        <p disabled={!data.formGridAddress1}>{data.formGridAddress1}</p>
-        <p disabled={!data.formGridAddress2}>{data.formGridAddress2}</p>
-        <p disabled={!data.formGridCity}>{data.formGridCity}</p>
-        <p disabled={!data.formGridState}>{data.formGridState}</p>
-        <p disabled={!data.formGridZip}>{data.formGridZip}</p>
-        <p disabled={!data.formGridName}>{data.formGridName}</p>
+      <h4>
+        Hi, My name is {data.formGridName} from {data.formGridState} is Studing{" "}
+        {data.formGridMajor} at {data.formGridSchool} Currently work as{" "}
+        {data.formGridOccupation}
+      </h4>
     </div>
-    
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;

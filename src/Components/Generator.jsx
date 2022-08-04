@@ -1,4 +1,4 @@
-import Button from 'react-bootstrap/Button';
+
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -17,6 +17,7 @@ function Generator() {
     <div className='form_gridview'>
     <div className='form_data'>
     <Form>
+    <h1>Options</h1>
     <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridFile">
           <Form.Label>Profile Pic</Form.Label>
@@ -39,28 +40,6 @@ function Generator() {
         </Form.Group>
         </Row>
         <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" onChange={(e)=>handleChange(e)}/>
-        </Form.Group>
-      </Row>
-
-      <Form.Group className="mb-3" controlId="formGridAddress1">
-        <Form.Label>Address</Form.Label>
-        <Form.Control placeholder="1234 Main St"onChange={(e)=>handleChange(e)}/>
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formGridAddress2">
-        <Form.Label>Address 2</Form.Label>
-        <Form.Control placeholder="Apartment, studio, or floor" onChange={(e)=>handleChange(e)}/>
-      </Form.Group>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>City</Form.Label>
-          <Form.Control  onChange={(e)=>handleChange(e)}/>
-        </Form.Group>
-
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>State</Form.Label>
           <Form.Select defaultValue="Choose..." onChange={(e)=>handleChange(e)}>
@@ -83,18 +62,27 @@ function Generator() {
             <option>Odisha</option>
           </Form.Select>
         </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control />
+      </Row>
+        <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridSchool">
+          <Form.Label>School</Form.Label>
+          <Form.Control type="text" placeholder="Enter School name" onChange={(e)=>handleChange(e)}/>
+        </Form.Group>
+        <Form.Group as={Col} controlId="formGridMajor">
+          <Form.Label>Major</Form.Label>
+          <Form.Control type="text" placeholder="Enter Major" onChange={(e)=>handleChange(e)}/>
         </Form.Group>
       </Row>
-      {/* <Button variant="primary" type="submit">
-        Submit
-      </Button> */}
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridOccupation">
+          <Form.Label>Occupation</Form.Label>
+          <Form.Control type="text" placeholder="Enter Occupation" onChange={(e)=>handleChange(e)}/>
+        </Form.Group>
+      </Row>
     </Form>
     </div>
-    <div>
+    <div className='resume'>
+           <h1>Result</h1>
           <Resume data={data}/>
     </div>
     </div>
