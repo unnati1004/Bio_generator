@@ -2,11 +2,28 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Generator.css'
 function Generator() {
   return (
+    <div className='form_data'>
     <Form>
       <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" placeholder="Enter name" />
+        </Form.Group>
+        <Form.Group as={Col} controlId="formGridGender">
+          <Form.Label>Gender</Form.Label>
+          <Form.Select defaultValue="Choose...">
+            <option>Choose...</option>
+            <option>male</option>
+            <option>female</option>
+            <option>other</option>
+          </Form.Select>
+        </Form.Group>
+        </Row>
+        <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
@@ -56,6 +73,7 @@ function Generator() {
         Submit
       </Button>
     </Form>
+    </div>
   );
 }
 
