@@ -4,15 +4,29 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Generator.css'
-import { useState } from "react";
+import { useState,useRef } from "react";
 import Resume from './Resume';
 function Generator() {
-  const [data,setData] = useState("")
+  const [data,setData] = useState("");
+  const uploadedImage = useRef(null);
+  const imageUploader = useRef(null);
     const handleChange=(e)=>{
       const {id,value} = e.target;
       // console.log(id,value);
       setData({...data,[id]:value})
     }
+    const handleImageUpload = (e) => {
+      const [file] = e.target.files;
+      if (file) {
+        const reader = new FileReader();
+        const { current } = uploadedImage;
+        current.file = file;
+        reader.onload = (e) => {
+          current.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    };
   return (
     <div className='form_gridview'>
     <div className='form_data'>
@@ -21,7 +35,7 @@ function Generator() {
     <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridFile">
           <Form.Label>Profile Pic</Form.Label>
-          <Form.Control type="file" />
+          <Form.Control type="file" accept="image/*" onChange={handleImageUpload} ref={imageUploader}/>
         </Form.Group>
         </Row>
         <Row className="mb-3">
@@ -83,7 +97,7 @@ function Generator() {
     </div>
     <div className='resume'>
            <h1>Result</h1>
-          <Resume data={data}/>
+          <Resume data={data} uploadedImage={uploadedImage}/>
     </div>
     </div>
   );
