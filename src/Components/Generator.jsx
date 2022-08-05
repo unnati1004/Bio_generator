@@ -2,6 +2,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Generator.css";
 import { useState, useRef } from "react";
@@ -31,126 +32,85 @@ function Generator() {
   return (
     <div className="form_gridview">
       <div className="form_data">
-        <Form>
-          <div style={{ backgroundColor: "rgb(146, 158, 129)" }}>
-            <h1 style={{ marginLeft: "40%" }}>Options</h1>
-          </div>
-
-          <Form.Group as={Row} className="mb-3" controlId="formGridProfile">
-            <Form.Label column sm={2}>
-              Profile Pic
-            </Form.Label>
-            <Col sm={5}>
-              <Form.Control
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                ref={imageUploader}
-              />
-            </Col>
-          </Form.Group>
-          {/*  */}
-
-          <Form.Group as={Row} sm={3} className="mb-3" controlId="formGridName">
-            <Form.Label>Name</Form.Label>
-            <Col sm={5}>
-              <Form.Control
-                type="text"
-                name={"name"}
-                placeholder="Enter name"
-                onChange={(e) => handleChange(e)}
-              />
-            </Col>
-
-            <Form.Label>Gender</Form.Label>
-            <Col sm={5}>
-              <Form.Select
-                defaultValue="Choose..."
-                onChange={(e) => handleChange(e)}
-              >
-                <option>Choose...</option>
-                <option>male</option>
-                <option>female</option>
-                <option>other</option>
-              </Form.Select>
-            </Col>
-            {/* </Form.Group> */}
-            {/* <Form.Group as={Row} sm={3} controlId="formGridGender"> */}
-            <button as={Row}>Random Name</button>
-          </Form.Group>
-
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            sm={3}
-            controlId="formGridState"
-          >
-            <Form.Label>Location</Form.Label>
-            <Col sm={5}>
-              <Form.Control
-                type="text"
-                placeholder="Enter location"
-                onChange={(e) => handleChange(e)}
-              />
-            </Col>
-
-            <button>Random Location</button>
-          </Form.Group>
-
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            sm={3}
-            controlId="formGridSchool"
-          >
-            <Form.Label>School</Form.Label>
-            <Col sm={5}>
-              <Form.Control
-                type="text"
-                placeholder="Enter School name"
-                onChange={(e) => handleChange(e)}
-              />
-            </Col>
-
-            <button>Random School</button>
-          </Form.Group>
-
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            sm={3}
-            controlId="formGridMajor"
-          >
-            <Form.Label>Major</Form.Label>
-            <Col sm={5}>
-              <Form.Control
-                type="text"
-                placeholder="Enter Major"
-                onChange={(e) => handleChange(e)}
-              />
-            </Col>
-
-            <button>Random Major</button>
-          </Form.Group>
-
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            sm={3}
-            controlId="formGridOccupation"
-          >
-            <Form.Label>Occupation</Form.Label>
-            <Col sm={5}>
-              <Form.Control
-                type="text"
-                placeholder="Enter Occupation"
-                onChange={(e) => handleChange(e)}
-              />
-            </Col>
-
-            <button>Random Occupation</button>
-          </Form.Group>
-        </Form>
+        <div style={{ backgroundColor: "rgb(146, 158, 129)" }}>
+          <h1 style={{ marginLeft: "40%" }}>Options</h1>
+        </div>
+        <div className="mb-3">
+          Profile Pic
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            ref={imageUploader}
+          />
+        </div>
+        <div className="mb-3">
+          Name
+          <input
+            type="text"
+            name={"name"}
+            placeholder="Enter name"
+            onChange={(e) => handleChange(e)}
+          />
+          <select name="" id="">
+            defaultValue="Choose..." onChange={(e) => handleChange(e)}
+            <option>Choose...</option>
+            <option>male</option>
+            <option>female</option>
+            <option>other</option>
+          </select>
+          <button as={Row}>Random Name</button>
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Enter location"
+            onChange={(e) => handleChange(e)}
+          />
+          <button>Random Location</button>
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Enter School name"
+            onChange={(e) => handleChange(e)}
+          />
+          <button>Random School</button>
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Enter Major"
+            onChange={(e) => handleChange(e)}
+          />
+          <button>Random Major</button>
+        </div>
+        <div className="mb-3">
+          Occupation
+          <input
+            type="text"
+            placeholder="Enter Occupation"
+            onChange={(e) => handleChange(e)}
+          />
+          <button>Random Occupation</button>
+        </div>
+        <div className="mb-3">
+          Religious Background
+          <textarea name="" id="religion" cols="30" rows="10"></textarea>
+          <button>Random Occupation</button>
+        </div>
+        <div className="mb-3">
+          Reason for meeting with missionaries
+          <textarea name="" id="reason" cols="30" rows="10"></textarea>
+          <button style={{ backgroundColor: "rgb(244, 206, 129)" }}>
+            Restoration
+          </button>
+          <button>Plan of Salvation</button>
+          <button>Gospel of christ</button>
+          <button>Law of chastity</button>
+          <button>Word of wisdom</button>
+          <button>Any Lesson</button>
+        </div>
       </div>
       <div className="resume">
         <h1>Result</h1>

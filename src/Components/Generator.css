@@ -1,10 +1,9 @@
 .form_data{
     display: flex;
-    width: 700px;
+    flex-direction: column;
+    width: 500px;
     justify-content:center ;
     align-items: center;
-    /* background-color: rgb(139, 153, 120); */
-    border: 1px solid rgb(8, 9, 9);
 }
 .form_gridview{
   display: flex;
@@ -13,7 +12,7 @@
   gap: 100px;
 }
 .resume{
-    border: 1px solid rgb(100, 166, 247);
+    border: 1px solid rgb(244, 206, 129);
     width: 600px;
     display: flex;
     flex-direction: column;
