@@ -3,8 +3,8 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
 const Resume = ({ data, uploadedImage }) => {
-  console.log(data)
-  let text = " "
+  console.log(data);
+  let text = " ";
   const [options, setOptions] = useState([]);
   const [to, setTo] = useState("en");
   const [from, setFrom] = useState("en");
@@ -48,22 +48,24 @@ const Resume = ({ data, uploadedImage }) => {
 
   return (
     <div>
-        <select name="" id="" defaultValue="Choose..."
-          onChange={(e) => setFrom(e.target.value)}>
-          {options.map((opt) => (
-            <option key={opt.code} value={opt.code}>
-              {opt.name}
-            </option>
-          ))}
-        </select>
-        
-      
       <div style={style}>
         <img width="100%" ref={uploadedImage} />
       </div>
       <div>
         <textarea name="" id="" cols="30" rows="10"></textarea>
       </div>
+      <select
+        name=""
+        id=""
+        defaultValue="Choose..."
+        onChange={(e) => setFrom(e.target.value)}
+      >
+        {options.map((opt) => (
+          <option key={opt.code} value={opt.code}>
+            {opt.name}
+          </option>
+        ))}
+      </select>
       <button
         onClick={() => {
           translate();
@@ -72,8 +74,7 @@ const Resume = ({ data, uploadedImage }) => {
         Translate
       </button>
       <div>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-
+        <textarea name="" id="" cols="30" rows="10"></textarea>
       </div>
     </div>
   );
