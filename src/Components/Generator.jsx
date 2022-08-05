@@ -105,11 +105,19 @@ function Generator() {
           <button style={{ backgroundColor: "rgb(244, 206, 129)" }}>
             Restoration
           </button>
-          <button>Plan of Salvation</button>
-          <button>Gospel of christ</button>
-          <button>Law of chastity</button>
-          <button>Word of wisdom</button>
-          <button>Any Lesson</button>
+          <button style={{ backgroundColor: "rgb(180, 241, 164)" }}>
+            Plan of Salvation
+          </button>
+          <button style={{ backgroundColor: "rgb(164, 181, 241)" }}>
+            Gospel of christ
+          </button>
+          <button style={{ backgroundColor: "rgb(241, 164, 197)" }}>
+            Law of chastity
+          </button>
+          <button style={{ backgroundColor: "rgb(229, 164, 241)" }}>
+            Word of wisdom
+          </button>
+          <button style={{ backgroundColor: "white" }}>Any Lesson</button>
         </div>
       </div>
       <div className="resume">
