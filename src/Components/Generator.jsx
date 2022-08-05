@@ -27,7 +27,7 @@ function Generator() {
   return (
     <div className="form_gridview">
       <div className="form_data">
-        <div style={{ backgroundColor: "rgb(146, 158, 129)" }}>
+        <div className="mb-3">
           <h1>Options</h1>
         </div>
         <div className="mb-3">
