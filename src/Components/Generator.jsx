@@ -33,7 +33,7 @@ function Generator() {
     <div className="form_gridview">
       <div className="form_data">
         <div style={{ backgroundColor: "rgb(146, 158, 129)" }}>
-          <h1 style={{ marginLeft: "40%" }}>Options</h1>
+          <h1>Options</h1>
         </div>
         <div className="mb-3">
           Profile Pic
@@ -52,8 +52,12 @@ function Generator() {
             placeholder="Enter name"
             onChange={(e) => handleChange(e)}
           />
-          <select name="" id="">
-            defaultValue="Choose..." onChange={(e) => handleChange(e)}
+          <select
+            name=""
+            id=""
+            defaultValue="Choose..."
+            onChange={(e) => handleChange(e)}
+          >
             <option>Choose...</option>
             <option>male</option>
             <option>female</option>
