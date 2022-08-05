@@ -1,15 +1,16 @@
 .form_data{
     display: flex;
+    width: 400px;
     justify-content:center ;
     align-items: center;
-    background-color: rgb(139, 153, 120);
-    padding: 20px;
+    /* background-color: rgb(139, 153, 120); */
+    border: 1px solid rgb(8, 9, 9);
 }
 .form_gridview{
   display: flex;
   justify-content:center ;
   align-items: center;
-  gap: 200px;
+  gap: 100px;
 }
 .resume{
     border: 1px solid rgb(100, 166, 247);
@@ -20,4 +21,12 @@
     align-items: center;
     background-color: rgb(146, 158, 129) ;
     padding: 20px;
+}
+.mb-3{
+  background-color:rgb(146, 158, 129) ;
+  width: 400px;
+  padding: 2px;
+}
+button{
+  font-size: x-small;
 }
