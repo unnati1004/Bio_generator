@@ -40,6 +40,15 @@ function Generator() {
           />
         </div>
         <div className="mb-3">
+          video
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            // ref={videoUploader}
+          />
+        </div>
+        <div className="mb-3">
           Name
           <input
             type="text"
