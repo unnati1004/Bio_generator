@@ -3,12 +3,14 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
 const Resume = ({ data, uploadedImage }) => {
+  let {formGridName,formGridState,formGridMajor,formGridSchool,formGridOccupation} = data;
+  let text = " "
   const [options, setOptions] = useState([]);
   const [to, setTo] = useState("en");
   const [from, setFrom] = useState("en");
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState();
   const [output, setOutput] = useState("");
-  //   console.log(uploadedImage);
+  console.log(input);
   let style;
   if (uploadedImage.current == null) {
     style = {};
@@ -23,7 +25,7 @@ const Resume = ({ data, uploadedImage }) => {
     params.append("api_key", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx");
 
     axios
-      .post("https://libretranslate.de/translate", params, {
+      .post("https://libretranslate.com/translate", params, {
         headers: {
           accept: "application/json",
           "Content-Type": "application/x-www-form-urlencoded",
@@ -34,7 +36,15 @@ const Resume = ({ data, uploadedImage }) => {
         setOutput(res.data.translatedText);
       });
   };
-
+  useEffect(() => {
+    axios
+      .get("https://libretranslate.com/languages", {
+        headers: { accept: "application/json" },
+      })
+      .then((res) => {
+        setOptions(res.data);
+      });
+  }, []);
 
   return (
     <div>
@@ -54,11 +64,7 @@ const Resume = ({ data, uploadedImage }) => {
       <div style={style}>
         <img width="100%" ref={uploadedImage} />
       </div>
-      <h2>
-        Hi, My name is {data.formGridName} from {data.formGridState} is Studing{" "}
-        {data.formGridMajor} at {data.formGridSchool}.Currently work as{" "}
-        {data.formGridOccupation}
-      </h2>
+        
       <button
         onClick={() => {
           translate();

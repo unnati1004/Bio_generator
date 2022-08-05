@@ -2,10 +2,12 @@
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Generator.css'
 import { useState,useRef } from "react";
 import Resume from './Resume';
+// import { Button } from 'bootstrap';
 function Generator() {
   const [data,setData] = useState("");
   const uploadedImage = useRef(null);
@@ -52,6 +54,7 @@ function Generator() {
             <option>other</option>
           </Form.Select>
         </Form.Group>
+          <button>Random Name</button>
         </Row>
         <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridState">

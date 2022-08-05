@@ -7,7 +7,7 @@ import Generator from "./Components/Generator";
 function App() {
   return (
     <div className="App">
-      <h1 style={{backgroundColor:"rgb(100, 166, 247)"}}>Bio Generator</h1>
+      <h1 style={{backgroundColor:"rgb(146, 158, 129)"}}>Bio Generator</h1>
       <div>
        <Generator />
       </div>
