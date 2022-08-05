@@ -1,14 +1,14 @@
-import React,{useState,useEffect} from "react";
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import axios from "axios";
 const Resume = ({ data, uploadedImage }) => {
-    const [options, setOptions] = useState([]);
-  const [to, setTo] = useState('en');
-  const [from, setFrom] = useState('en');
-  const [input, setInput] = useState('');
-  const [output, setOutput] = useState('');
-//   console.log(uploadedImage);
+  const [options, setOptions] = useState([]);
+  const [to, setTo] = useState("en");
+  const [from, setFrom] = useState("en");
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+  //   console.log(uploadedImage);
   let style;
   if (uploadedImage.current == null) {
     style = {};
@@ -34,37 +34,38 @@ const Resume = ({ data, uploadedImage }) => {
         setOutput(res.data.translatedText);
       });
   };
-  useEffect(() => {
-    axios
-      .get("https://libretranslate.de/languages", {
-        headers: { accept: "application/json" },
-      })
-      .then((res) => {
-        console.log(res.data);
-        setOptions(res.data);
-      });
-  }, []);
+
 
   return (
     <div>
-      <div style={style}>
-        <img width="100%" ref={uploadedImage} />
-      </div>
       <Form.Group as={Col} controlId="formGridState">
-          <Form.Label>State</Form.Label>
-          <Form.Select defaultValue="Choose..." onChange={(e) => setFrom(e.target.value)}>
+        <Form.Label>State</Form.Label>
+        <Form.Select
+          defaultValue="Choose..."
+          onChange={(e) => setFrom(e.target.value)}
+        >
           {options.map((opt) => (
             <option key={opt.code} value={opt.code}>
               {opt.name}
             </option>
           ))}
-          </Form.Select>
-        </Form.Group>
-      <textarea>
+        </Form.Select>
+      </Form.Group>
+      <div style={style}>
+        <img width="100%" ref={uploadedImage} />
+      </div>
+      <h2>
         Hi, My name is {data.formGridName} from {data.formGridState} is Studing{" "}
         {data.formGridMajor} at {data.formGridSchool}.Currently work as{" "}
         {data.formGridOccupation}
-      </textarea>
+      </h2>
+      <button
+        onClick={() => {
+          translate();
+        }}
+      >
+        Translate
+      </button>
     </div>
   );
 };
