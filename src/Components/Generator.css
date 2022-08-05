@@ -16,7 +16,7 @@
   align-items: center;
   gap: 100px;
 }
-.resume{
+.resume {
     border: 1px solid rgb(241, 164, 197);
     width: 600px;
     display: flex;
