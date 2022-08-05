@@ -33,49 +33,37 @@ function Generator() {
       <div className="form_data">
         <Form>
           <div style={{ backgroundColor: "rgb(146, 158, 129)" }}>
-            
-            <h1 style={{marginLeft:"40%"}}>Options</h1>
+            <h1 style={{ marginLeft: "40%" }}>Options</h1>
           </div>
-          <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <Form.Label column sm={2}>
-          Email
-        </Form.Label>
-        <Col sm={5}>
-          <Form.Control type="email" placeholder="Email" />
-        </Col>
-      </Form.Group>
 
-          {/* <Row className="mb-3" sm={3}> */}
-            <Form.Group as={Row} className="mb-3" controlId="formGridProfile">
-              <Form.Label column sm={2}>Profile Pic</Form.Label>
-              <Col sm={5}>
-
+          <Form.Group as={Row} className="mb-3" controlId="formGridProfile">
+            <Form.Label column sm={2}>
+              Profile Pic
+            </Form.Label>
+            <Col sm={5}>
               <Form.Control
                 type="file"
                 accept="image/*"
                 onChange={handleImageUpload}
                 ref={imageUploader}
               />
-              </Col>
-            </Form.Group>
+            </Col>
+          </Form.Group>
           {/*  */}
-          
-            <Form.Group as={Row} sm={3} className="mb-3" controlId="formGridName">
-              <Form.Label>Name</Form.Label>
-              <Col sm={5}>
 
+          <Form.Group as={Row} sm={3} className="mb-3" controlId="formGridName">
+            <Form.Label>Name</Form.Label>
+            <Col sm={5}>
               <Form.Control
                 type="text"
                 name={"name"}
                 placeholder="Enter name"
                 onChange={(e) => handleChange(e)}
               />
-              </Col>
-            {/* </Form.Group>
-            <Form.Group as={Row} sm={3} controlId="formGridGender"> */}
-              <Form.Label>Gender</Form.Label>
-              <Col sm={5}>
+            </Col>
 
+            <Form.Label>Gender</Form.Label>
+            <Col sm={5}>
               <Form.Select
                 defaultValue="Choose..."
                 onChange={(e) => handleChange(e)}
@@ -85,79 +73,83 @@ function Generator() {
                 <option>female</option>
                 <option>other</option>
               </Form.Select>
-              </Col>
-              {/* </Form.Group> */}
-              {/* <Form.Group as={Row} sm={3} controlId="formGridGender"> */}
-              <button as={Row}>Random Name</button>
-              </Form.Group>
-           
-          
-          
-            <Form.Group as={Row} className="mb-3"  sm={3} controlId="formGridState">
-              <Form.Label>Location</Form.Label>
-              <Col sm={5}>
+            </Col>
+            {/* </Form.Group> */}
+            {/* <Form.Group as={Row} sm={3} controlId="formGridGender"> */}
+            <button as={Row}>Random Name</button>
+          </Form.Group>
 
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            sm={3}
+            controlId="formGridState"
+          >
+            <Form.Label>Location</Form.Label>
+            <Col sm={5}>
               <Form.Control
                 type="text"
                 placeholder="Enter location"
                 onChange={(e) => handleChange(e)}
               />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} sm={3} controlId="formGridGender">
-              <button>Random Location</button>
+            </Col>
 
-            </Form.Group>
-          
-         
-            <Form.Group as={Row} className="mb-3"  sm={3} controlId="formGridSchool">
-              <Form.Label>School</Form.Label>
-              <Col sm={5}>
+            <button>Random Location</button>
+          </Form.Group>
 
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            sm={3}
+            controlId="formGridSchool"
+          >
+            <Form.Label>School</Form.Label>
+            <Col sm={5}>
               <Form.Control
                 type="text"
                 placeholder="Enter School name"
                 onChange={(e) => handleChange(e)}
               />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} sm={3} controlId="formGridGender">
+            </Col>
 
-              <button>Random School</button>
-            </Form.Group>
-          
-          
-            <Form.Group as={Row} className="mb-3"  sm={3} controlId="formGridMajor">
-              <Form.Label>Major</Form.Label>
-              <Col sm={5}>
+            <button>Random School</button>
+          </Form.Group>
 
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            sm={3}
+            controlId="formGridMajor"
+          >
+            <Form.Label>Major</Form.Label>
+            <Col sm={5}>
               <Form.Control
                 type="text"
                 placeholder="Enter Major"
                 onChange={(e) => handleChange(e)}
               />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} sm={3} controlId="formGridGender">
-              <button>Random Major</button>
-            </Form.Group>
-          
-          
-            <Form.Group as={Row} className="mb-3"  sm={3} controlId="formGridOccupation">
-              <Form.Label>Occupation</Form.Label>
-              <Col sm={5}>
+            </Col>
 
+            <button>Random Major</button>
+          </Form.Group>
+
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            sm={3}
+            controlId="formGridOccupation"
+          >
+            <Form.Label>Occupation</Form.Label>
+            <Col sm={5}>
               <Form.Control
                 type="text"
                 placeholder="Enter Occupation"
                 onChange={(e) => handleChange(e)}
               />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} sm={3} controlId="formGridGender">
+            </Col>
+
             <button>Random Occupation</button>
-              </Form.Group>
-          
+          </Form.Group>
         </Form>
       </div>
       <div className="resume">
