@@ -5,8 +5,10 @@
     justify-content:center ;
     align-items: center;
 }
-.form_data div{
+.form_data > div{
   padding: 10px;
+  gap: 10px;
+  width: 500px;
 }
 .form_gridview{
   display: flex;

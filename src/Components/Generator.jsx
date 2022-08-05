@@ -48,10 +48,11 @@ function Generator() {
           Name
           <input
             type="text"
-            name={"name"}
+            id="name"
             placeholder="Enter name"
             onChange={(e) => handleChange(e)}
           />
+          Gender
           <select
             name=""
             id=""
@@ -66,24 +67,30 @@ function Generator() {
           <button as={Row}>Random Name</button>
         </div>
         <div className="mb-3">
+          Location
           <input
             type="text"
+            id="location"
             placeholder="Enter location"
             onChange={(e) => handleChange(e)}
           />
           <button>Random Location</button>
         </div>
         <div className="mb-3">
+          School
           <input
             type="text"
+            id="school"
             placeholder="Enter School name"
             onChange={(e) => handleChange(e)}
           />
           <button>Random School</button>
         </div>
         <div className="mb-3">
+          Major
           <input
             type="text"
+            id="major"
             placeholder="Enter Major"
             onChange={(e) => handleChange(e)}
           />
@@ -93,19 +100,26 @@ function Generator() {
           Occupation
           <input
             type="text"
+            id="occu"
             placeholder="Enter Occupation"
             onChange={(e) => handleChange(e)}
           />
           <button>Random Occupation</button>
         </div>
         <div className="mb-3">
+          <div>
           Religious Background
-          <textarea name="" id="religion" cols="30" rows="10"></textarea>
+          </div>
+          <textarea name="" id="religion" ></textarea>
           <button>Random Occupation</button>
         </div>
         <div className="mb-3">
+          <div>
           Reason for meeting with missionaries
-          <textarea name="" id="reason" cols="30" rows="10"></textarea>
+          </div>
+          <div>
+          <textarea name="" id="reason"></textarea>
+          </div>
           <button style={{ backgroundColor: "rgb(244, 206, 129)" }}>
             Restoration
           </button>
