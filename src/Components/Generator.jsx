@@ -1,9 +1,4 @@
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import "./Generator.css";
 import { useState, useRef } from "react";
 import Resume from "./Resume";
@@ -14,7 +9,7 @@ function Generator() {
   const imageUploader = useRef(null);
   const handleChange = (e) => {
     const { id, value } = e.target;
-    // console.log(id,value);
+    console.log(id,value);
     setData({ ...data, [id]: value });
   };
   const handleImageUpload = (e) => {
@@ -64,7 +59,7 @@ function Generator() {
             <option>female</option>
             <option>other</option>
           </select>
-          <button as={Row}>Random Name</button>
+          <button>Random Name</button>
         </div>
         <div className="mb-3">
           Location
@@ -110,7 +105,7 @@ function Generator() {
           <div>
           Religious Background
           </div>
-          <textarea name="" id="religion" ></textarea>
+          <textarea name="" id="religion" onChange={(e) => handleChange(e)}></textarea>
           <button>Random Occupation</button>
         </div>
         <div className="mb-3">
@@ -118,7 +113,7 @@ function Generator() {
           Reason for meeting with missionaries
           </div>
           <div>
-          <textarea name="" id="reason"></textarea>
+          <textarea name="" id="reason" onChange={(e) => handleChange(e)}></textarea>
           </div>
           <button style={{ backgroundColor: "rgb(244, 206, 129)" }}>
             Restoration

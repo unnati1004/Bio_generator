@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
 const Resume = ({ data, uploadedImage }) => {
-  let {formGridName,formGridState,formGridMajor,formGridSchool,formGridOccupation} = data;
+  console.log(data)
   let text = " "
   const [options, setOptions] = useState([]);
   const [to, setTo] = useState("en");
@@ -48,23 +48,22 @@ const Resume = ({ data, uploadedImage }) => {
 
   return (
     <div>
-      <Form.Group as={Col} controlId="formGridState">
-        <Form.Label>State</Form.Label>
-        <Form.Select
-          defaultValue="Choose..."
-          onChange={(e) => setFrom(e.target.value)}
-        >
+        <select name="" id="" defaultValue="Choose..."
+          onChange={(e) => setFrom(e.target.value)}>
           {options.map((opt) => (
             <option key={opt.code} value={opt.code}>
               {opt.name}
             </option>
           ))}
-        </Form.Select>
-      </Form.Group>
+        </select>
+        
+      
       <div style={style}>
         <img width="100%" ref={uploadedImage} />
       </div>
-        
+      <div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
       <button
         onClick={() => {
           translate();
@@ -72,6 +71,10 @@ const Resume = ({ data, uploadedImage }) => {
       >
         Translate
       </button>
+      <div>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+
+      </div>
     </div>
   );
 };
