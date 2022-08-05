@@ -2,7 +2,6 @@
 import "./Generator.css";
 import { useState, useRef } from "react";
 import Resume from "./Resume";
-// import { Button } from 'bootstrap';
 function Generator() {
   const [data, setData] = useState("");
   const uploadedImage = useRef(null);

@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 import axios from "axios";
 const Resume = ({ data, uploadedImage }) => {
   console.log(data);
-  let text = " ";
   const [options, setOptions] = useState([]);
   const [to, setTo] = useState("en");
   const [from, setFrom] = useState("en");
