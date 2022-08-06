@@ -200,7 +200,7 @@ function Generator() {
         </div>
       </div>
       <div className="resume">
-        <div className="mb-3">
+        <div >
         <h1>Result</h1>
         </div>
         <Resume data={data} uploadedImage={uploadedImage} />

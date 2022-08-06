@@ -48,13 +48,23 @@ const Resume = ({ data, uploadedImage }) => {
       <div style={style}>
         <img width="100%" ref={uploadedImage} />
       </div>
-      <div>
+      <div className="mb-3">
         <h4>
-
-    {data.name?(<span>{data.name} </span>):""}{!data.location?"":( <span>from {data.location}. </span>)}
-  {data.major?(<span> She is Studying {data.major} </span>):data.school?(<span>at {data.school} </span>):""} 
-  {data.occu?( <span>She is currently work as a {data.occu}.</span> ):""}
-  {data.religion?( <span>She was raised {data.religion}. </span> ):""}
+          {data.name ? <span>{data.name} </span> : ""}
+          {!data.location ? "" : <span>from {data.location}. </span>}
+          {data.major ? (
+            <span> She is Studying {data.major} </span>
+          ) : data.school ? (
+            <span>at {data.school} </span>
+          ) : (
+            ""
+          )}
+          {data.occu ? (
+            <span>She is currently work as a {data.occu}.</span>
+          ) : (
+            ""
+          )}
+          {data.religion ? <span>She was raised {data.religion}. </span> : ""}
         </h4>
       </div>
       <select
