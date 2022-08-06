@@ -199,9 +199,9 @@ function Generator() {
           <button style={{ backgroundColor: "white" }}>Any Lesson</button>
         </div>
       </div>
-      <div className="resume">
+      <div>
         <div >
-        <h1>Result</h1>
+        <h1 className="mb-3">Result</h1>
         </div>
         <Resume data={data} uploadedImage={uploadedImage} />
       </div>

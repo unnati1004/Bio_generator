@@ -50,17 +50,21 @@ const Resume = ({ data, uploadedImage }) => {
       </div>
       <div className="mb-3">
         <h4>
-          {data.name ? <span>{data.name} </span> : ""}
-          {!data.location ? "" : <span>from {data.location}. </span>}
-          {data.major ? (
-            <span> She is Studying {data.major} </span>
-          ) : data.school ? (
-            <span>at {data.school} </span>
+          {/* {data.name ? <span>You are teaching {data.name} </span> : ""} */}
+          {data.location ? (
+            <span> {data.name} from {data.location}. </span>
+          ) : data.name ? (
+            <span>You are teaching {data.name} </span>
           ) : (
             ""
           )}
+          {data.major ? (
+            <span> She is Studying {data.major}at {data.school}. </span>
+          ):data.school ? 
+            (<span>at {data.school} </span>)
+          :""}
           {data.occu ? (
-            <span>She is currently work as a {data.occu}.</span>
+            <span> She is currently work as a {data.occu}.</span>
           ) : (
             ""
           )}
