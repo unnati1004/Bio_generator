@@ -48,11 +48,7 @@ const Resume = ({ data, uploadedImage }) => {
       <div style={style}>
         <img width="100%" ref={uploadedImage} />
       </div>
-      <div>
-        <textarea name="" id="" cols="30" rows="10">
-
-        </textarea>
-      </div>
+      {data.name?(<h3>You are teaching {data.name}</h3>):""}  
       <select
         name=""
         id=""
