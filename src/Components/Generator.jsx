@@ -17,7 +17,7 @@ function Generator() {
   const [reg,setReg] = useState("");
   const handleChange = (e) => {
     const { id, value } = e.target;
-    console.log(id,value);
+    // console.log(id,value);
     setData({ ...data, [id]: value });
   };
   const handleImageUpload = (e) => {
@@ -34,7 +34,7 @@ function Generator() {
   };
   useEffect(()=>{
       axios.get('https://anoxco0-product.herokuapp.com/randomprofiles').then(({data})=>{
-        console.log(data[0].names)
+        // console.log(data[0].names)
         setData1(data);
 
       }).catch((e)=>{

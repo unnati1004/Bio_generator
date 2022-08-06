@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
 import axios from "axios";
 const Resume = ({ data, uploadedImage }) => {
   console.log(data);
@@ -9,7 +7,7 @@ const Resume = ({ data, uploadedImage }) => {
   const [from, setFrom] = useState("en");
   const [input, setInput] = useState();
   const [output, setOutput] = useState("");
-  console.log(input);
+  // console.log(input);
   let style;
   if (uploadedImage.current == null) {
     style = {};
@@ -52,7 +50,7 @@ const Resume = ({ data, uploadedImage }) => {
       </div>
       <div>
         <textarea name="" id="" cols="30" rows="10">
-          
+
         </textarea>
       </div>
       <select
