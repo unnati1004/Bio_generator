@@ -95,7 +95,12 @@ const Resume = ({ data, uploadedImage }) => {
           {data.religion ? <span>She was raised {data.religion}. </span> : ""}
         </h4>
       </div>
-      <select name="" id="" defaultValue="Choose...">
+      <select
+        name=""
+        id=""
+        defaultValue="Choose..."
+        onChange={(e) => languageKey(e.target.value)}
+      >
         <option>Please Select Language..</option>
         {languagesList.map((language) => {
           return <option value={language.code}>{language.name}</option>;
