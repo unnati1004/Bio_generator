@@ -45,26 +45,32 @@ function Generator() {
   const handlenames=(max)=>{
      var n = Math.floor(Math.random() * max);
      setname(data1[0].names[n].name)
+     setData({ ...data, ['name']: data1[0].names[n].name });
   }
   const handleloc=(max)=>{
      var n = Math.floor(Math.random() * max);
      setLoc(data1[0].locations[n])
+     setData({ ...data, ['location']: data1[0].locations[n] });
   }
   const handleschool=(max)=>{
      var n = Math.floor(Math.random() * max);
-     setSchool(data1[0].schools[n])
+     setSchool(data1[0].schools[n]);
+     setData({ ...data, ['school']: data1[0].schools[n] });
   }
   const handlemaj=(max)=>{
      var n = Math.floor(Math.random() * max);
-     setMaj(data1[0].degrees[n])
+     setMaj(data1[0].degrees[n]);
+     setData({ ...data, ['major']: data1[0].degrees[n] })
   }
   const handleocc=(max)=>{
      var n = Math.floor(Math.random() * max);
      setOcc(data1[0].occupations[n])
+     setData({ ...data, ['occu']: data1[0].occupations[n] })
   }
   const handlereligion=(max)=>{
      var n = Math.floor(Math.random() * max);
      setReg(data1[0].religious_backgrounds[n].description)
+     setData({ ...data, ['religion']: data1[0].religious_backgrounds[n].description })
   }
 
 
@@ -106,7 +112,7 @@ function Generator() {
           Gender
           <select
             name=""
-            id=""
+            id="gender"
             defaultValue="Choose..."
             onChange={(e) => handleChange(e)}
           >
