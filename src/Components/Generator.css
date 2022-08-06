@@ -17,17 +17,17 @@
   gap: 100px;
 }
 .resume {
-    border: 1px solid rgb(241, 164, 197);
+    /* border: 1px solid rgb(241, 164, 197); */
     width: 600px;
     display: flex;
     flex-direction: column;
    justify-content:center ;
     align-items: center;
-    background-color: rgb(146, 158, 129) ;
+    background-color: rgb(185, 195, 170) ;
     padding: 20px;
 }
 .mb-3{
-  background-color:rgb(146, 158, 129) ;
+  background-color:rgb(180, 193, 163) ;
   width: 400px;
   padding: 2px;
   padding: 10px;
