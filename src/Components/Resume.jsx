@@ -51,7 +51,9 @@ const Resume = ({ data, uploadedImage }) => {
         <img width="100%" ref={uploadedImage} />
       </div>
       <div>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <textarea name="" id="" cols="30" rows="10">
+          
+        </textarea>
       </div>
       <select
         name=""

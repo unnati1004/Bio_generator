@@ -2,10 +2,19 @@
 import "./Generator.css";
 import { useState, useRef } from "react";
 import Resume from "./Resume";
+import { useEffect } from "react";
+import axios from "axios";
 function Generator() {
   const [data, setData] = useState("");
+  const [data1,setData1] = useState("");
   const uploadedImage = useRef(null);
   const imageUploader = useRef(null);
+  const [name,setname] = useState("");
+  const [loc,setLoc] = useState("");
+  const [School,setSchool] = useState("");
+  const [maj,setMaj] = useState("");
+  const [occ,setOcc] = useState("");
+  const [reg,setReg] = useState("");
   const handleChange = (e) => {
     const { id, value } = e.target;
     console.log(id,value);
@@ -23,6 +32,44 @@ function Generator() {
       reader.readAsDataURL(file);
     }
   };
+  useEffect(()=>{
+      axios.get('https://anoxco0-product.herokuapp.com/randomprofiles').then(({data})=>{
+        console.log(data[0].names)
+        setData1(data);
+
+      }).catch((e)=>{
+        console.log(e.message)
+      })
+  },[])
+    
+  const handlenames=(max)=>{
+     var n = Math.floor(Math.random() * max);
+     setname(data1[0].names[n].name)
+  }
+  const handleloc=(max)=>{
+     var n = Math.floor(Math.random() * max);
+     setLoc(data1[0].locations[n])
+  }
+  const handleschool=(max)=>{
+     var n = Math.floor(Math.random() * max);
+     setSchool(data1[0].schools[n])
+  }
+  const handlemaj=(max)=>{
+     var n = Math.floor(Math.random() * max);
+     setMaj(data1[0].degrees[n])
+  }
+  const handleocc=(max)=>{
+     var n = Math.floor(Math.random() * max);
+     setOcc(data1[0].occupations[n])
+  }
+  const handlereligion=(max)=>{
+     var n = Math.floor(Math.random() * max);
+     setReg(data1[0].religious_backgrounds[n].description)
+  }
+
+
+
+
   return (
     <div className="form_gridview">
       <div className="form_data">
@@ -53,6 +100,7 @@ function Generator() {
             type="text"
             id="name"
             placeholder="Enter name"
+            value={name}
             onChange={(e) => handleChange(e)}
           />
           Gender
@@ -67,7 +115,7 @@ function Generator() {
             <option>female</option>
             <option>other</option>
           </select>
-          <button>Random Name</button>
+          <button onClick={()=>{handlenames(data1[0].names.length)}}>Random Name</button>
         </div>
         <div className="mb-3">
           Location
@@ -75,46 +123,50 @@ function Generator() {
             type="text"
             id="location"
             placeholder="Enter location"
+            value={loc}
             onChange={(e) => handleChange(e)}
           />
-          <button>Random Location</button>
+          <button onClick={()=>{handleloc(data1[0].locations.length)}} >Random Location</button>
         </div>
         <div className="mb-3">
           School
           <input
             type="text"
             id="school"
+            value={School}
             placeholder="Enter School name"
             onChange={(e) => handleChange(e)}
           />
-          <button>Random School</button>
+          <button onClick={()=>{handleschool(data1[0].schools.length)}}>Random School</button>
         </div>
         <div className="mb-3">
           Major
           <input
             type="text"
             id="major"
+            value={maj}
             placeholder="Enter Major"
             onChange={(e) => handleChange(e)}
           />
-          <button>Random Major</button>
+          <button onClick={()=>{handlemaj(data1[0].degrees.length)}}>Random Major</button>
         </div>
         <div className="mb-3">
           Occupation
           <input
             type="text"
             id="occu"
+            value={occ}
             placeholder="Enter Occupation"
             onChange={(e) => handleChange(e)}
           />
-          <button>Random Occupation</button>
+          <button onClick={()=>{handleocc(data1[0].occupations.length)}}>Random Occupation</button>
         </div>
         <div className="mb-3">
           <div>
           Religious Background
           </div>
-          <textarea name="" id="religion" onChange={(e) => handleChange(e)}></textarea>
-          <button>Random Occupation</button>
+          <textarea name="" id="religion" value={reg} onChange={(e) => handleChange(e)}></textarea>
+          <button onClick={()=>{handlereligion(data1[0].religious_backgrounds.length)}}>Random Occupation</button>
         </div>
         <div className="mb-3">
           <div>
