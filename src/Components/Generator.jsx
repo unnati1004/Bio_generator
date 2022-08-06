@@ -172,7 +172,7 @@ function Generator() {
           Religious Background
           </div>
           <textarea name="" id="religion" value={reg} onChange={(e) => handleChange(e)}></textarea>
-          <button onClick={()=>{handlereligion(data1[0].religious_backgrounds.length)}}>Random Occupation</button>
+          <button onClick={()=>{handlereligion(data1[0].religious_backgrounds.length)}}>Random Religion</button>
         </div>
         <div className="mb-3">
           <div>
