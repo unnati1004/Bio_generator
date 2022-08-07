@@ -71,10 +71,10 @@ const Resume = ({ data, uploadedImage,inp }) => {
       <div>
       </div>
       <div>
-        <textarea cols="50" rows="8" value={output}></textarea>
+        <textarea cols="50" rows="8" value={output} onChange={()=>{}}></textarea>
       </div>
       <div>
-        <button onClick={e=>translate()}>Translate</button>
+        <button onClick={()=>translate()}>Translate</button>
       </div>
     </div>
   );
