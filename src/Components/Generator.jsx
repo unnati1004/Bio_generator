@@ -1,4 +1,3 @@
-
 import "./Generator.css";
 import { useState, useRef } from "react";
 import Resume from "./Resume";
@@ -6,6 +5,25 @@ import { useEffect } from "react";
 import axios from "axios";
 function Generator() {
   const [data, setData] = useState("");
+  const loca = data.location ? (
+      data.name +' from '+ data.location
+  ) : data.name ? (
+    'You are teaching '+ data.name +"."
+  ):"" ; 
+  const major = data.major ? (
+   'She is Studying'+ data.major +" at "+ data.school+"."
+  ): data.school ? (
+   'at'+ data.school 
+  ):"" ;
+  const occup = data.occu ? (
+     "She is currently work as a "+ data.occu+"."
+  ):"" ;
+  const rel = data.religion ? (
+    "She was raised " + data.religion +"."
+  ) : (
+    ""
+  );
+  const inp = loca+major+occup+rel;
   const [data1,setData1] = useState("");
   const uploadedImage = useRef(null);
   const imageUploader = useRef(null);
@@ -203,7 +221,7 @@ function Generator() {
         <div >
         <h1 className="mb-3">Result</h1>
         </div>
-        <Resume data={data} uploadedImage={uploadedImage} />
+        <Resume data={data} uploadedImage={uploadedImage} inp={inp}/>
       </div>
     </div>
   );
