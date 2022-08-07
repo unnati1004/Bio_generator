@@ -10,7 +10,6 @@ const Resume = ({ data, uploadedImage,inp }) => {
   const [options, setOptions] = useState([]);
   const [to, setTo] = useState('en');
   const [from, setFrom] = useState('en');
-  const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
 
   const translate = () => {
@@ -28,7 +27,7 @@ const Resume = ({ data, uploadedImage,inp }) => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
     }).then(res=>{
-      console.log(res.data)
+      // console.log(res.data)
       setOutput(res.data.translatedText)
     })
   };
@@ -39,7 +38,7 @@ const Resume = ({ data, uploadedImage,inp }) => {
         headers: { accept: 'application/json' },
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setOptions(res.data);
       });
   }, []);
